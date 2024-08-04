@@ -219,10 +219,27 @@ let
 in [ f a ]
 ```
 
-Multiple arguments
+## Multiple arguments
 Also known as “curried functions”.
 
 Nix functions take exactly one argument. Multiple arguments can be handled by nesting functions.
 
 Such a nested function can be used like a function that takes multiple arguments, but offers additional flexibility.
+
+## Impurities
+So far we have only covered what we call pure expressions: declaring data and transforming it with functions.
+
+In practice, describing derivations requires observing the outside world.
+
+There is only one impurity in the Nix language that is relevant here: reading files from the file system as build inputs
+
+Build inputs are files that derivations refer to in order to describe how to derive new files. When run, a derivation will only have access to explicitly declared build inputs.
+
+The only way to specify build inputs in the Nix language is explicitly with:
+
+File system paths
+
+Dedicated functions.
+
+Nix and the Nix language refer to files by their content hash. If file contents are not known in advance, it’s unavoidable to read files during expression evaluation.
 
