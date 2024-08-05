@@ -237,9 +237,50 @@ Build inputs are files that derivations refer to in order to describe how to der
 
 The only way to specify build inputs in the Nix language is explicitly with:
 
-File system paths
-
-Dedicated functions.
+- File system paths
+- Dedicated functions.
 
 Nix and the Nix language refer to files by their content hash. If file contents are not known in advance, it’s unavoidable to read files during expression evaluation.
 
+## Paths
+Whenever a file system path is used in string interpolation, the contents of that file are copied to a special location in the file system, the Nix store, as a side effect.
+
+The evaluated string then contains the Nix store path assigned to that file.
+
+Example:
+```sh
+echo 123 > data
+"${./data}"
+"/nix/store/h1qj5h5n05b5dl5q4nldrqq8mdg7dhqk-data"
+
+```
+
+## Fetchers
+Files to be used as build inputs do not have to come from the file system.
+
+The Nix language provides built-in impure functions to fetch files over the network during evaluation:
+
+builtins.fetchurl
+
+builtins.fetchTarball
+
+builtins.fetchGit
+
+builtins.fetchClosure
+
+These functions evaluate to a file system path in the Nix store.
+
+Example:
+
+```sh
+builtins.fetchurl "https://github.com/NixOS/nix/archive/7c3ab5751568a0bc63430b33a5169c5e4784a0ff.tar.gz"
+"/nix/store/7dhgs330clj36384akg86140fqkgh8zf-7c3ab5751568a0bc63430b33a5169c5e4784a0ff.tar.gz"
+```
+
+Some of them add extra convenience, such as automatically unpacking archives.
+
+Example:
+```sh
+builtins.fetchTarball "https://github.com/NixOS/nix/archive/7c3ab5751568a0bc63430b33a5169c5e4784a0ff.tar.gz"
+"/nix/store/d59llm96vgis5fy231x6m7nrijs0ww36-source"
+```
