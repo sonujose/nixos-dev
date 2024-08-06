@@ -1,0 +1,3 @@
+go 1.21.7
+
+use ./exercise/replace_str_mutltiple_file
