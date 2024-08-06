@@ -1,0 +1,4 @@
+INFO: This is an informational message.
+ERROR: This is an error message.
+WARNING: This is a warning message.
+ERROR: Another error occurred.

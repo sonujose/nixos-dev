@@ -1,0 +1,54 @@
+# Nix build directories and files
+**/result
+/nix
+
+# Nix store paths (you might have these if you work in a non-standard environment)
+*.drv
+*.lock
+*.json
+
+# Go build cache and binaries (if using Go)
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+*.o
+*.a
+/vendor
+
+# IDE/editor specific files
+.vscode/
+.idea/
+*.swp
+*~
+
+# Operating system specific files
+.DS_Store
+Thumbs.db
+
+# Other cache and temporary files
+.cache/
+#*.log
+
+# Go modules files (if using Go modules)
+go.sum
+go.mod
+
+# Python virtual environment
+.venv/
+venv/
+
+# Mac OS X specific files
+.DS_Store
+
+# Node.js dependencies
+node_modules/
+
+# Build directories
+/build/
+out/
+dist/
+target/
