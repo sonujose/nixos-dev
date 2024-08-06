@@ -1,6 +1,5 @@
 ## Hacking Your First Package - NixOS
 
-
 ### Example: Overriding a Package
 
 Overriding a package in NixOS allows you to customize the build of an existing package. This can be useful if you need to change the version, modify build inputs, or adjust configuration options.
