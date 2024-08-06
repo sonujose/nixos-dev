@@ -1,7 +1,8 @@
 go 1.21.7
 
 use (
-	./exercise/replace_str_mutltiple_file
-	./exercise/watch-dir-file-changes
 	./exercise/log-extractor
+	./exercise/replace_str_mutltiple_file
+	./exercise/system-resources
+	./exercise/watch-dir-file-changes
 )
