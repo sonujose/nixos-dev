@@ -1,6 +1,7 @@
 go 1.21.7
 
 use (
+	./exercise/ftp-server
 	./exercise/log-extractor
 	./exercise/replace_str_mutltiple_file
 	./exercise/system-resources

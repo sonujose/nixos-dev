@@ -98,3 +98,19 @@ sudo nixos-rebuild switch
 
 This process allows you to customize Nix packages to fit your specific requirements.
 
+
+Function Arguments:
+
+```s
+{ pkgs ? import <nixpkgs> {} }:
+```
+
+This line defines the arguments to the function. It says that the function takes one argument, pkgs, which defaults to the result of import <nixpkgs> {} if not provided.
+
+pkgs: This is typically the set of packages available from the Nixpkgs repository. By default, it imports the Nixpkgs package collection using <nixpkgs>.
+Importing Nixpkgs:
+
+nix
+Copy code
+import <nixpkgs> {}
+This expression imports the Nixpkgs package set. The angle brackets <nixpkgs> refer to a channel or path that points to the Nixpkgs repository. The empty braces {} indicate that no specific arguments are being passed to the import function.
