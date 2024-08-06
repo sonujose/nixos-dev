@@ -90,11 +90,11 @@ sudo nixos-rebuild switch
 
 ### Summary
 
-1. **Locate the Original Package**: Find the package you want to override in the Nixpkgs repository.
-2. **Create an Override**: Use the `overrideAttrs` function to modify the package's attributes in a `default.nix` file.
-3. **Build the Overridden Package**: Use `nix-build` to build the package with the modifications.
-4. **Use in NixOS Configuration**: Modify your `configuration.nix` to use the overridden package.
-5. **Apply the Configuration**: Run `nixos-rebuild switch` to apply the changes.
+1. Locate the Original Package: Find the package you want to override in the Nixpkgs repository.
+2. Create an Override: Use the `overrideAttrs` function to modify the package's attributes in a `default.nix` file.
+3. Build the Overridden Package: Use `nix-build` to build the package with the modifications.
+4. Use in NixOS Configuration: Modify your `configuration.nix` to use the overridden package.
+5. Apply the Configuration: Run `nixos-rebuild switch` to apply the changes.
 
 This process allows you to customize Nix packages to fit your specific requirements.
 
